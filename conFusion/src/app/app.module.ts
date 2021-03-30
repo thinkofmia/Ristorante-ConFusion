@@ -6,6 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AppComponent } from './app.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -21,7 +23,9 @@ import { MenuComponent } from './menu/menu.component';
     FlexLayoutModule,
     MatToolbarModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
