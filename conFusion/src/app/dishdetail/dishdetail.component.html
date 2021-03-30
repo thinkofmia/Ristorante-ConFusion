@@ -9,7 +9,7 @@
   <div fxFlex="40">
     <div fxFlex *ngIf="dish">
       <mat-card>
-        <mat-card-header>
+        <mat-card-header class="">
           <mat-card-title>
             <h3>{{dish.name | uppercase}}</h3>
           </mat-card-title>
@@ -19,8 +19,14 @@
           <p>{{dish.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <button _ngcontent-c21="" color="primary" mat-icon-button="" class="mat-icon-button mat-primary">
+            <span class="mat-button-wrapper">
+              <mat-icon _ngcontent-c21="" aria-label="Example icon-button with a heart icon" class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
+            </span>
+            <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+            <div class="mat-button-focus-overlay"></div>
+          </button>
+          <button mat-button class="mat-button mat-primary" color="primary">SHARE</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -36,10 +42,10 @@
         </mat-card-header>
         <mat-card-content>
           <mat-list cols="1">
-            <mat-list-item *ngFor="let comment of dish.comments">
-              <p matLine>{{comment.comment}}</p>
+            <mat-list-item *ngFor="let comment of dish.comments" class="mat-toolbar mat-primary">
+              <h4 matLine>"{{comment.comment}}"</h4>
               <p matLine><i>{{comment.rating}} Stars</i></p>
-              <p matLine>-- <b>{{comment.author}}</b> {{ comment.date | date }}</p>
+              <p matLine>-- <b>{{comment.author}}</b> ({{ comment.date | date }})</p>
             </mat-list-item>
           </mat-list>
         </mat-card-content>
