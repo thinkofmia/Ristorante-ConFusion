@@ -38,8 +38,8 @@
           <mat-list cols="1">
             <mat-list-item *ngFor="let comment of dish.comments">
               <p matLine>{{comment.comment}}</p>
-              <p matLine>{{comment.rating}} Stars</p>
-              <p matLine>-- {{comment.author}}, {{comment.date}}</p>
+              <p matLine><i>{{comment.rating}} Stars</i></p>
+              <p matLine>-- <b>{{comment.author}}</b> {{ comment.date | date }}</p>
             </mat-list-item>
           </mat-list>
         </mat-card-content>
