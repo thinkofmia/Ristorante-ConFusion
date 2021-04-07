@@ -14,8 +14,8 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40">
-    <div fxFlex *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish">
+    <div fxFlex>
       <mat-card>
         <mat-card-header class="">
           <mat-card-title>
@@ -27,7 +27,10 @@
           <p>{{dish.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="goBack()">BACK</button>
+          <button mat-button color="primary" [routerLink]="['/dishdetail', prev]">
+            <span class="fa fa-chevron-left fa-lg"></span>
+          </button>
+          <button mat-button color="primary" (click)="goBack()">BACK</button>
           <button _ngcontent-c21="" color="primary" mat-icon-button="" class="mat-icon-button mat-primary">
             <span class="mat-button-wrapper">
               <mat-icon _ngcontent-c21="" aria-label="Example icon-button with a heart icon" class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
@@ -36,6 +39,10 @@
             <div class="mat-button-focus-overlay"></div>
           </button>
           <button mat-button class="mat-button mat-primary" color="primary">SHARE</button>
+          <span class="flex-spacer"></span>
+          <button mat-button color="primary" [routerLink]="['/dishdetail', next]">
+            <span class="fa fa-chevron-right fa-lg"></span>
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -44,8 +51,8 @@
     </div>
   </div>
 
-  <div fxFlex="40">
-    <div fxFlex *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish">
+    <div fxFlex>
       <mat-card>
         <mat-card-header>
           <mat-card-title>
