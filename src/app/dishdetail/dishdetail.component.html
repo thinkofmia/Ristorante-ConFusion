@@ -77,12 +77,10 @@
                 </mat-form-field>
               </p>
               <p>
-                <mat-form-field class="half-width">
-                  <input matInput formControlName="rating" placeholder="Rating" type="tel" pattern="[0-9]*" required>
+                  <mat-slider matInput thumbLabel tickInterval="1" formControlName="rating" min="1" max="5" step="1" value="5" required></mat-slider>
                   <mat-error *ngIf="formErrors.rating">
                     {{ formErrors.rating }}
                   </mat-error>
-                </mat-form-field>
               </p>
               <p>
                 <mat-form-field class="full-width">
