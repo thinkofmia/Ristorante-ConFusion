@@ -128,5 +128,6 @@ export class DishdetailComponent implements OnInit {
       comment: ''
     });
     this.commentFormDirective.resetForm();
+    this.createForm();
   }
 }
