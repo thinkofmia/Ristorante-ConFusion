@@ -64,7 +64,7 @@
               <p matLine>-- <b>{{comment.author}}</b> ({{ comment.date | date }})</p>
             </mat-list-item>
           </mat-list>
-          <mat-list *ngIf="commentForm.status=='VALID'" cols="1">
+          <mat-list *ngIf="commentForm.valid" cols="1">
             <mat-list-item class="mat-toolbar mat-secondary">
               <h4 matLine>"{{commentForm.value.comment}}"</h4>
               <p matLine><i>{{commentForm.value.rating}} Stars</i></p>
