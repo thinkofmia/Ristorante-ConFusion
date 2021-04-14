@@ -85,10 +85,10 @@
               <p>
                 <mat-form-field class="full-width">
                   <textarea matInput formControlName="comment" placeholder="Your Comment" rows=12 required>
-                    <mat-error *ngIf="formErrors.comment">
-                      {{ formErrors.comment }}
-                    </mat-error>
                   </textarea>
+                  <mat-error *ngIf="formErrors.comment">
+                    {{ formErrors.comment }}
+                  </mat-error>
                 </mat-form-field>
               </p>
               <button type="submit" mat-button class="background-primary text-floral-white"
