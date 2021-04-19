@@ -51,7 +51,7 @@ export class DishdetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private fb:FormBuilder,
-    @Inject('BaseUrl') private BaseURL) {
+    @Inject('BaseURL') private BaseURL) { 
       this.createForm();
      }
 
