@@ -6,7 +6,7 @@ import { DishService } from '../services/dish.service';
 import { switchMap } from  'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/comment';
-import { visibility, flyInOut } from '../animations/app.animation';
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 @Component({
   selector: 'app-dishdetail',
@@ -18,7 +18,8 @@ import { visibility, flyInOut } from '../animations/app.animation';
   },
   animations: [
     flyInOut(),
-    visibility()
+    visibility(),
+    expand()
   ]
 })
 
