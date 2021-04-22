@@ -67,7 +67,7 @@ export class ContactComponent implements OnInit {
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       telnum: [0, [Validators.required, Validators.pattern]],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       agree: false,
       contacttype: 'None',
       message: ''
@@ -107,6 +107,7 @@ export class ContactComponent implements OnInit {
     .subscribe(feedback => {
       this.submittedFeedback = feedback;
       this.feedback = null;
+      setTimeout(() => { this.submittedFeedback = null; }, 5000);
     },
     errmess => {
       this.errMess = <any>errmess;
