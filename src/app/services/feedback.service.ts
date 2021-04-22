@@ -14,14 +14,19 @@ export class FeedbackService {
   constructor(private http:HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService) { }
 
-  putFeedback(feedback: Feedback): Observable<Feedback> {
+  getFeedback(): Observable<Feedback>{
+      return this.http.get<Feedback>(baseURL + 'feedback')
+        .pipe(catchError(this.processHTTPMsgService.handleError));
+    }
+
+  submitFeedback(feedback: Feedback): Observable<Feedback> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
 
-    return this.http.put<Feedback>(baseURL + 'feedbacks/' , feedback, httpOptions)
+    return this.http.put<Feedback>(baseURL + 'feedback' , feedback, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 }
